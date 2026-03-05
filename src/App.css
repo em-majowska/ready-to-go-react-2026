@@ -26,10 +26,24 @@ main {
   min-height: calc(100vh - (179px + 156px));
   font-size: 46px;
 
-  .container {
+  .container,
+  .top {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    gap: 80px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .top {
+    width: 70%;
+  }
+  .bottom {
+    width: 70%;
+    justify-content: start;
   }
 }
 
@@ -38,30 +52,31 @@ main {
   justify-content: center;
   align-items: center;
   width: 250px;
-  height: 145px;
+  padding: 1em 0.6em;
   border-radius: 6px;
   color: white;
 }
 
-.sign.red {
+.red {
   background-color: #d34848;
+  color: white;
 }
 
-.sign.green {
+.green {
   background-color: #46ac4a;
 }
 
 button {
-  width: 120px;
-  height: 70px;
+  padding: 0.5em 0.6em;
   border-radius: 6px;
   border: 1px solid #908f8f;
   font-size: 36px;
   color: #5c48d3;
 }
+
 button.selected {
   background-color: #5c48d3;
-  border: none;
+  border: 1px solid transparent;
   color: white;
 }
 

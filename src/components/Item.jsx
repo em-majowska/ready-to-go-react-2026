@@ -9,64 +9,77 @@ const Item = () => {
 
   return (
     <div className="container">
-      <div className="switches">
-        <div className="col-1">
-          <Button
-            text="ON"
-            onClick={() => {
-              if (switch1) return;
-              setSwitch1(!switch1);
-            }}
-            className={switch1 ? "selected" : "unselected"}
-          />
-          <Button
-            text="ON"
-            onClick={() => {
-              if (switch2) return;
-              setSwitch2(!switch2);
-            }}
-            className={switch2 ? "selected" : "unselected"}
-          />
-          <Button
-            text="ON"
-            onClick={() => {
-              if (switch3) return;
-              setSwitch3(!switch3);
-            }}
-            className={switch3 ? "selected" : "unselected"}
-          />
+      <div className="top">
+        <div className="switches">
+          <div className="col-1">
+            <Button
+              text="ON"
+              onClick={() => {
+                if (switch1) return;
+                setSwitch1(!switch1);
+              }}
+              className={switch1 ? "selected" : "unselected"}
+            />
+            <Button
+              text="ON"
+              onClick={() => {
+                if (switch2) return;
+                setSwitch2(!switch2);
+              }}
+              className={switch2 ? "selected" : "unselected"}
+            />
+            <Button
+              text="ON"
+              onClick={() => {
+                if (switch3) return;
+                setSwitch3(!switch3);
+              }}
+              className={switch3 ? "selected" : "unselected"}
+            />
+          </div>
+          <div className="col2">
+            <Button
+              text="OFF"
+              onClick={() => {
+                if (!switch1) return;
+                setSwitch1(!switch1);
+              }}
+              className={switch1 ? "unselected" : "selected"}
+            />
+            <Button
+              text="OFF"
+              onClick={() => {
+                if (!switch2) return;
+                setSwitch2(!switch2);
+              }}
+              className={switch2 ? "unselected" : "selected"}
+            />
+            <Button
+              text="OFF"
+              onClick={() => {
+                if (!switch3) return;
+                setSwitch3(!switch3);
+              }}
+              className={switch3 ? "unselected" : "selected"}
+            />
+          </div>
         </div>
-        <div className="col2">
-          <Button
-            text="OFF"
-            onClick={() => {
-              if (!switch1) return;
-              setSwitch1(!switch1);
-            }}
-            className={switch1 ? "unselected" : "selected"}
-          />
-          <Button
-            text="OFF"
-            onClick={() => {
-              if (!switch2) return;
-              setSwitch2(!switch2);
-            }}
-            className={switch2 ? "unselected" : "selected"}
-          />
-          <Button
-            text="OFF"
-            onClick={() => {
-              if (!switch3) return;
-              setSwitch3(!switch3);
-            }}
-            className={switch3 ? "unselected" : "selected"}
-          />
-        </div>
+        <Sign
+          ready={switch1 && switch2 && switch3}
+          className={switch1 && switch2 && switch3 ? "sign green" : "sign red"}
+        />
       </div>
-      <Sign
-        ready={switch1 && switch2 && switch3}
-        className={switch1 && switch2 && switch3 ? "sign green" : "sign red"}
-      />
+      <div className="bottom">
+        <Button
+          className="red"
+          onClick={() => {
+            setSwitch1(false);
+            setSwitch2(false);
+            setSwitch3(false);
+          }}
+          text="Reset"
+        />
+      </div>
     </div>
   );
 };
