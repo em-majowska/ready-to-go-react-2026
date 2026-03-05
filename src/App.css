@@ -92,13 +92,14 @@ button.selected {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
   gap: 70px;
 
   > * {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     gap: 50px;
   }
 }

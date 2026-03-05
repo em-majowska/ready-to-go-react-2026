@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import Sign from "./Sign";
+import Switch from "./Switch";
 
 const Item = () => {
   const [switch1, setSwitch1] = useState(false);
@@ -11,61 +12,24 @@ const Item = () => {
     <div className="container">
       <div className="top">
         <div className="switches">
-          <div className="col-1">
-            <Button
-              text="ON"
-              onClick={() => {
-                if (switch1) return;
-                setSwitch1(!switch1);
-              }}
-              className={switch1 ? "selected" : "unselected"}
-            />
-            <Button
-              text="ON"
-              onClick={() => {
-                if (switch2) return;
-                setSwitch2(!switch2);
-              }}
-              className={switch2 ? "selected" : "unselected"}
-            />
-            <Button
-              text="ON"
-              onClick={() => {
-                if (switch3) return;
-                setSwitch3(!switch3);
-              }}
-              className={switch3 ? "selected" : "unselected"}
-            />
-          </div>
-          <div className="col2">
-            <Button
-              text="OFF"
-              onClick={() => {
-                if (!switch1) return;
-                setSwitch1(!switch1);
-              }}
-              className={switch1 ? "unselected" : "selected"}
-            />
-            <Button
-              text="OFF"
-              onClick={() => {
-                if (!switch2) return;
-                setSwitch2(!switch2);
-              }}
-              className={switch2 ? "unselected" : "selected"}
-            />
-            <Button
-              text="OFF"
-              onClick={() => {
-                if (!switch3) return;
-                setSwitch3(!switch3);
-              }}
-              className={switch3 ? "unselected" : "selected"}
-            />
-          </div>
+          <Switch
+            btn1Func={() => setSwitch1(true)}
+            btn2Func={() => setSwitch1(false)}
+            switchValue={switch1}
+          />
+          <Switch
+            btn1Func={() => setSwitch2(true)}
+            btn2Func={() => setSwitch2(false)}
+            switchValue={switch2}
+          />
+          <Switch
+            btn1Func={() => setSwitch3(true)}
+            btn2Func={() => setSwitch3(false)}
+            switchValue={switch3}
+          />
         </div>
         <Sign
-          ready={switch1 && switch2 && switch3}
+          text={switch1 && switch2 && switch3 ? "Go!" : "No way!"}
           className={switch1 && switch2 && switch3 ? "sign green" : "sign red"}
         />
       </div>

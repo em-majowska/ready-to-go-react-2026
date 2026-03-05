@@ -1,9 +1,7 @@
 import React from "react";
 
 const Sign = (props) => {
-  return (
-    <div className={props.className}>{props.ready ? "Go!" : "No way!"}</div>
-  );
+  return <div className={props.className}>{props.text}</div>;
 };
 
 export default Sign;
