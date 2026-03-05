@@ -12,21 +12,9 @@ const Item = () => {
     <div className="container">
       <div className="top">
         <div className="switches">
-          <Switch
-            btn1Func={() => setSwitch1(true)}
-            btn2Func={() => setSwitch1(false)}
-            switchValue={switch1}
-          />
-          <Switch
-            btn1Func={() => setSwitch2(true)}
-            btn2Func={() => setSwitch2(false)}
-            switchValue={switch2}
-          />
-          <Switch
-            btn1Func={() => setSwitch3(true)}
-            btn2Func={() => setSwitch3(false)}
-            switchValue={switch3}
-          />
+          <Switch setSwitch={setSwitch1} switchValue={switch1} />
+          <Switch setSwitch={setSwitch2} switchValue={switch2} />
+          <Switch setSwitch={setSwitch3} switchValue={switch3} />
         </div>
         <Sign
           text={switch1 && switch2 && switch3 ? "Go!" : "No way!"}

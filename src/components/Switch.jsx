@@ -6,12 +6,12 @@ const Switch = (props) => {
     <div className="switch">
       <Button
         text="ON"
-        onClick={props.btn1Func}
+        onClick={() => props.setSwitch(true)}
         className={props.switchValue ? "selected" : "unselected"}
       />
       <Button
         text="OFF"
-        onClick={props.btn2Func}
+        onClick={() => props.setSwitch(false)}
         className={props.switchValue ? "unselected" : "selected"}
       />
     </div>
